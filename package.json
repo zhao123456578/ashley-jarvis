@@ -1,0 +1,59 @@
+{
+  "name": "ashley-desktop-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/main/main.js",
+  "scripts": {
+    "build": "node scripts/copy-resources.cjs && tsc && tsc -p tsconfig.renderer.json --noEmit && node scripts/bundle-renderer.cjs",
+    "build:helmet:opensource": "node scripts/build-opensource-helmet.mjs",
+    "generate:sounds": "node scripts/generate-clean-sounds.mjs",
+    "dev": "pnpm run build && electron .",
+    "package:win": "pnpm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win",
+    "test": "node --experimental-strip-types --no-warnings scripts/spoken-hide-test.mjs && node --experimental-strip-types --no-warnings scripts/spoken-music-test.mjs && node --experimental-strip-types --no-warnings scripts/spoken-conflicts-test.mjs"
+  },
+  "build": {
+    "appId": "io.github.ashley.desktopassistant",
+    "productName": "Ashley",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "dist/native/**",
+      "dist/assets/sounds/**",
+      "dist/assets/speaker-verify/**",
+      "node_modules/sherpa-onnx-node/**",
+      "node_modules/sherpa-onnx-win-x64/**"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "Ashley-${version}-${arch}.${ext}"
+    }
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "openwakeword-wasm-browser": "^0.1.1",
+    "sherpa-onnx-node": "^1.13.7",
+    "three": "^0.185.1",
+    "ws": "^8.21.3"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "4.4.2",
+    "@gltf-transform/extensions": "4.4.2",
+    "@gltf-transform/functions": "4.4.2",
+    "@types/node": "^22.15.3",
+    "@types/three": "^0.185.4",
+    "@types/ws": "^8.18.1",
+    "electron": "^39.2.7",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.1",
+    "meshoptimizer": "1.1.1",
+    "sharp": "0.35.3",
+    "typescript": "^5.8.3"
+  }
+}
