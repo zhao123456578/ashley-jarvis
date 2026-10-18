@@ -12,11 +12,8 @@
 
 ## 本版改动
 
-| 文件 | 改动 |
-| --- | --- |
-| `assets/helmet/model.glb` | 贴图重映射：把原模型贴图里的金色部分（暖色高光）映射成蓝色辉光，暗部保留炭黑。网格、UV、动画、材质结构均未改动 |
-
-也就是说：**这是一次纯外观改动**，没有修改任何逻辑代码。
+**暂无。** 当前本仓库的代码与素材与上游完全一致，仅补充了中文说明文档
+（`README.md`、`CREDITS.md`），上游原文保留在 `README-upstream.md`。
 
 ## 第三方组件
 
@@ -31,9 +28,8 @@
 
 ## 素材说明
 
-`assets/helmet/model.glb` 是由 AI 3D 生成服务（Tripo）产出的模型，随后用 glTF-Transform 处理。
-**本仓库以 MIT 重新分发该文件存在授权不确定性**——如果你要商用或大规模分发，
-建议先确认原始生成服务的条款，或替换成自己有明确授权的模型。
+`assets/helmet/model.glb` 沿用上游仓库中的模型（由 AI 3D 生成服务产出，随后用 glTF-Transform 处理）。
+该文件的授权归属请以**上游仓库**的说明为准；如果要商用或大规模分发，建议先确认原始生成服务的条款。
 
 `assets/speaker-verify/`、`assets/wake-word/` 下的模型分别来自 sherpa-onnx 和
 openWakeWord 生态，保留其原始许可。

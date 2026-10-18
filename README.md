@@ -8,13 +8,15 @@
 > 的二次开发版（MIT 许可）。**原作者：Cw-JackMMXX**。本版把形象换成了蓝色贾维斯头盔，
 > 并补充了中文使用文档。上游文档保留在 [README-upstream.md](README-upstream.md)。
 
-## 本版改了什么
+## 本版与上游的差异
 
-| | 上游 | 本版 |
-| --- | --- | --- |
-| 形象 | 黑金配色 3D 头盔 | **蓝色贾维斯配色**（贴图重映射：金色裂纹 → 蓝色辉光，模型/拼装/粒子/全息全部保留） |
+**目前没有改动任何代码和素材，与上游保持一致。** 本仓库存在的目的是：
 
-只改了一个文件：`assets/helmet/model.glb`。渲染代码、唤醒词、声纹、语音链路一行没动。
+- 提供一个中文说明完整、可以直接上手参与的镜像；
+- 后续的形象、语音、动作等改动，都在 Issues / PR 里公开讨论。
+
+上游是 MIT 协议，欢迎任何人直接开 PR。想换形象的话，改 `assets/helmet/model.glb` 就能换
+（渲染器是 `unlit` 模式，直接显示贴图；模型自带的 63 块拼装、4 万粒子、全息效果都会保留）。
 
 ## 它有什么能力
 
@@ -89,10 +91,9 @@ ashley-jarvis/
 
 ## English
 
-A fork of [Cw-JackMMXX/ashley-desktop-assistant-win](https://github.com/Cw-JackMMXX/ashley-desktop-assistant-win)
-(MIT). The only change in this version is the avatar: the 3D helmet's texture was remapped from
-black-gold to the blue Jarvis palette — same mesh, same 63-piece assembly, same 40k particles,
-same hologram mode.
+A mirror/fork of [Cw-JackMMXX/ashley-desktop-assistant-win](https://github.com/Cw-JackMMXX/ashley-desktop-assistant-win)
+(MIT) with Chinese documentation. **Code and assets currently match upstream — no changes.**
+Pull requests are welcome; swapping the avatar only requires replacing `assets/helmet/model.glb`.
 
 ```powershell
 pnpm install
